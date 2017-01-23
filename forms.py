@@ -5,6 +5,15 @@ from wtforms.validators import DataRequired, Email, Length
 class SignupForm(Form):
     first_name = StringField('First name', validators=[DataRequired("You did not enter your first name")])
     last_name = StringField('Last name', validators=[DataRequired("You did not enter your last name")])
-    email = StringField('Email', validators=[DataRequired("You did not enter you email"), Email("Please enter a valid email address.")])
+    email = StringField('Email', validators=[DataRequired("You did not enter your email"), Email("Please enter a valid email address.")])
     password = PasswordField('Password', validators=[DataRequired("You cannot signup without a password!"), Length(min=6, message="Password must be at least 6 characters")])
     submit = SubmitField('Sign up')
+
+class LoginForm(Form):
+    email = StringField('Email', validators=[DataRequired("Please enter your email"), Email("Please enter a valid email address.")])
+    password = PasswordField('Password', validators=[DataRequired("Please enter your password!")])
+    submit = SubmitField('Sign in')
+
+class AddressForm(Form):
+    address = StringField('Address', validators=[DataRequired('Please enter an address.')])
+    submit = SubmitField('Search')
