@@ -4,7 +4,7 @@ from forms import SignupForm, LoginForm, AddressForm
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://eqbopjwrkrnkaj:07153f0fde7df5e3815f36ca70c3b9aa14f6e9bd27ec58225da404fa9b1840ab@ec2-54-235-168-152.compute-1.amazonaws.com:5432/dbrl4161m3g394'
 db.init_app(app)
 
 app.secret_key = "development-key"
